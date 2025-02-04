@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Khadeer Shaik - Game Developer Portfolio</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1a1a1a;
+        color: #ffffff;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #111;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+        border: 3px solid #00ffcc;
+      }
+      header h1 {
+        font-size: 2em;
+        margin: 0;
+      }
+      header p {
+        font-size: 1em;
+        color: #00ffcc;
+        margin: 5px 0 0;
+      }
+      /* Navigation Menu */
+      nav {
+        margin: 20px;
+        text-align: center;
+      }
+      nav a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9em;
+        transition: color 0.3s ease;
+      }
+      nav a:hover {
+        color: #00ffcc;
+      }
+      /* Sections */
+      section {
+        padding: 20px;
+        margin: 20px;
+        background-color: #222;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      section:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 255, 204, 0.2);
+      }
+      h2 {
+        color: #00ffcc;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 1em;
+      }
+      /* Portfolio Trailer Section */
+      .trailer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .video-container {
+        position: relative;
+        padding-bottom: 40%;
+        height: 0;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+      .trailer-description {
+        background-color: #2a2a2a;
+        padding: 10px 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .trailer-description h3 {
+        color: #00ffcc;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+      }
+      .trailer-description ul {
+        list-style: none;
+        padding: 0;
+      }
+      .trailer-description ul li {
+        margin-bottom: 0.6rem;
+        font-size: 0.85em;
+      }
+      .trailer-description ul li::before {
+        content: "▹";
+        color: #00ffcc;
+        margin-right: 0.5rem;
+      }
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .project {
+        margin-bottom: 20px;
+      }
+      .project iframe {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0);
+      }
+      .project iframe:hover {
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.8);
+        transform: scale(1.02);
+      }
+      .project p {
+        font-size: 0.9em;
+      }
+      .project-tags {
+        margin-top: 10px;
+      }
+      .project-tags span {
+        display: inline-block;
+        background-color: #2a2a2a;
+        color: #00ffcc;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8em;
+        margin-right: 5px;
+      }
+      /* CV Section */
+      #cv a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #00ffcc;
+        color: #111;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+      }
+      #cv a:hover {
+        background-color: #00e6b8;
+      }
+      /* Contact Section */
+      #contact ul {
+        list-style: none;
+        padding: 0;
+      }
+      #contact ul li {
+        margin-bottom: 10px;
+      }
+      #contact ul li a {
+        color: #00ffcc;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      #contact ul li a:hover {
+        color: #ffffff;
+      }
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #111;
+        color: #ffffff;
+        font-size: 0.8em;
+        margin-top: 20px;
+      }
+      footer p {
+        margin: 0;
+      }
+      /* Media Queries */
+      @media (min-width: 768px) {
+        header {
+          flex-direction: row;
+          justify-content: center;
+          padding: 40px 20px;
+        }
+        header img {
+          width: 150px;
+          height: 150px;
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+        header h1 {
+          font-size: 2.5em;
+        }
+        header p {
+          font-size: 1.2em;
+        }
+        nav a {
+          font-size: 1em;
+          margin: 0 15px;
+        }
+        section {
+          padding: 25px;
+          margin: 25px;
+        }
+        h2 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 1.1em;
+        }
+        .trailer-container {
+          flex-direction: row;
+          gap: 1.5rem;
+        }
+        .video-container {
+          flex: 2;
+          padding-bottom: 30%;
+        }
+        .trailer-description {
+          flex: 1;
+        }
+        .project {
+          flex-direction: row;
+          align-items: center;
+        }
+        .project iframe {
+          width: 100%;
+          height: 300px;
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <img src="images/akame.jpeg" alt="Profile picture of Khadeer Shaik" />
+      <div>
+        <h1>Khadeer Shaik</h1>
+        <p>Game Developer | Portfolio</p>
+      </div>
+    </header>
+    <!-- Navigation Menu -->
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#trailer">Portfolio Trailer</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm a passionate game developer, currently a second year student
+        at University of Greenwich studying Games Design and Development
+        (Programming).
+      </p>
+    </section>
+    <!-- Portfolio Trailer Section -->
+    <section id="trailer">
+      <h2>Portfolio Trailer</h2>
+      <div class="trailer-container">
+        <div class="video-container">
+          <iframe
+            src=""
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            aria-label="Portfolio Trailer Video"
+          ></iframe>
+        </div>
+        <div class="trailer-description">
+          <h3>Skill and Experience</h3>
+          <p>
+            With 1 year of hands-on experience in game development, I’ve
+            developed expertise in areas such as:
+          </p>
+          <ul>
+            <li>Unity & C# Development</li>
+            <li>Agile and Scrum</li>
+            <li>Azure DevOps and Git</li>
+            <li>Arduino and Microcontrollers</li>
+            <li>Gameplay Programming</li>
+            <li>Level Design</li>
+            <li>Prototyping & Iterative Design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <iframe
+            src="https://www.youtube.com/embed/SY8_TngqxCk?si=GPWjYHsWtcjDK6oH"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            aria-label="Demo of Project 1"
+          ></iframe>
+          <p>
+            <strong>Project 1:</strong> A third-person 3D stealth game built in Unity. <br />
+            <ul>
+                <li>This project was part of my coursework, where I lead a small team of three, which significantly enhanced my leadership and collaboration skills.</li>
+                <li> What I learned:
+                    <ul>
+                        <li>Enemy AI state machines</li>
+                        <li>Navigation meshes</li>
+                        <li>Health systems for both players and enemies</li>
+                        <li>User interface design</li>
+                        <li>Level design</li>
+                        <li>Player mechanics such as a flashlight system and object interactions</li>
+                    </ul>
+                </li>
+                <li>Overall, this project helped me develop both my soft skills—such as teamwork, communication, and leadership—and my technical proficiency in game development.</li>
+            </ul>
+        </p>
+
+          <div class="project-tags">
+            <span>#Unity</span>
+            <span>#C#</span>
+            <span>#3D</span>
+            <span>#GitKraken</span>
+            <span>#Maya</span>
+          </div>
+        </div>
+        <div class="project">
+          <iframe
+            src="https://www.youtube.com/embed/6IifTQmgHWc?si=w1SZMJcd6KmOfIBf"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            aria-label="Demo of Project 2"
+          ></iframe>
+          <p>
+            <strong>Project 2:</strong> A third-person 3D stealth game built in Unity. <br />
+            <ul>
+                <li>This project was developed individually and greatly enhanced my programming skills. I adhered to good OOP practices, implementing complex enemy AI using techniques.</li> 
+                <li> What I learned:
+                    <ul>
+                        <li>Inheritance</li>
+                        <li>Method overriding</li>
+                        <li>polymorphism</li>
+                        <li>modularity</li>
+                        <li>Enumerators</li>
+                        <li>Rapid Prototyping</li>
+                    </ul>
+                </li>
+                <li>Overall, this project helped me develop my technical proficiency in game development and programming.</li>
+            </ul>
+        </p>
+          <div class="project-tags">
+            <span>#Unity</span>
+            <span>#2D</span>
+            <span>#OOP</span>
+          </div>
+        </div>
+        <div class="project">
+          <iframe
+            src="https://www.youtube.com/embed/YWlRU3ONnaQ?si=9P8aQKnnvx8i5LbO"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            aria-label="Demo of Project 3"
+          ></iframe>
+          <p><strong>Project 3:</strong> A 2D multiplayer game with custom controller for player input using Arduino.</p>
+          <ul>
+            <li>This project was developed and designed individually by me. The idea of this and the initial prototyping had taken place during
+              a 3 day hackathon where workshops were done to quickly generate ideas around a given brief of 'Bizzaro'.
+            </li> 
+            <li> What I learned:
+                <ul>
+                    <li>Handling complex math in Unity, particularly Euler angles and Quaternions.</li>
+                    <li>Using Tinkercad for circuit simulation and prototyping.</li>
+                    <li>Understanding basic electronic components and how to utilize them effectively.</li>
+                    <li> Enhancing my rapid prototyping skills.</li>
+                    <li>Integrating microcontrollers into Unity. </li>
+                    
+                </ul>
+            </li>
+            <li>Overall, this project helped me tackle complex rotation-related problems and gain hands-on experience with microcontroller integration.</li>
+        </ul>
+          <div class="project-tags">
+            <span>#Unity</span>
+            <span>#C#</span>
+            <span>#Arduino</span>
+            <span>#Multiplayer</span>
+          </div>
+        </div>
+        <div class="project">
+          <iframe
+            src="https://youtub.com/embed/MnIRAGodAXA"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            aria-label="Demo of Project 4"
+          ></iframe>
+          <p>
+            <strong>Project 4:</strong> A game.
+          </p>
+          <div class="project-tags">
+            <span>#Ureal</span>
+            <span>#c++</span>
+            <span>#Tower Defence</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CV Section -->
+    <section id="cv">
+      <h2>CV</h2>
+      <p>Download my CV to learn more about my experience and skills:</p>
+      <a href="assets/Cv.pdf" download>Download CV</a>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>
+        If you'd like to get in touch, feel free to reach out via email or
+        social media:
+      </p>
+      <ul>
+        <li>
+          Email:
+          <a href="mailto:Khadeershaik0308@gmail.com"
+            >Khadeershaik0308@gmail.com</a
+          >
+        </li>
+        <li>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/khadeer-shaik-22881b258/"
+            target="_blank"
+            >Khadeer-Linkedin</a
+          >
+        </li>
+        <li>
+          GitHub:
+          <a href="https://github.com/Khadeer01" target="_blank">GitHub</a>
+        </li>
+      </ul>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <p>
+        &copy; <span id="current-year"></span> Khadeer Shaik. All rights
+        reserved.
+      </p>
+    </footer>
+    <!-- Script to Update Year Dynamically -->
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
